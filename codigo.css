@@ -1,0 +1,160 @@
+/* Reseteo básico de márgenes y relleno */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1 {
+    color: #333;
+    font-size: 2.5rem; /* Ajusta el tamaño de fuente según sea necesario */
+    font-weight: 100; /* Delgadez de la fuente */
+    line-height: 1.2;
+    text-transform: uppercase;
+}   
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: black;
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
+}
+
+/* Encabezado */
+header {
+    background-color: #f7d01a; /* Amarillo DHL */
+    padding: 5px;
+    text-align: center;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    max-width: 50px;
+    height: auto;
+}
+
+h1 {
+    color: #333;
+}
+
+/* Caja de rastreo */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.tracking-box {
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 500px; /* Ajusta el tamaño máximo según sea necesario */
+}
+
+.tracking-box h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.tracking-box input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.tracking-box button {
+    background-color: red; /* Amarillo DHL */
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.tracking-box button:hover {
+    background-color: #e5b90f; /* Amarillo más oscuro para hover */
+}
+
+/* Pie de página */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+    }
+
+    .logo {
+        max-width: 120px;
+    }
+
+    .tracking-box {
+        padding: 15px;
+    }
+
+    .tracking-box h2 {
+        font-size: 1.2rem;
+    }
+
+    .tracking-box input[type="text"] {
+        width: calc(100% - 20px);
+    }
+
+    .tracking-box button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container {
+        padding: 10px;
+    }
+
+    .logo {
+        max-width: 100px;
+    }
+
+    .tracking-box {
+        padding: 10px;
+    }
+
+    .tracking-box h2 {
+        font-size: 1rem;
+    }
+
+    .tracking-box input[type="text"] {
+        width: calc(100% - 20px);
+    }
+
+    .tracking-box button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
+}

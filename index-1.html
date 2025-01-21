@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta property="og:title" content="DHL" />
+    <meta property="og:description" content="Rastreos Y Seguimientos autorizados." />
+    <meta property="og:image" content="https://www.dhl.com/content/dam/dhl/global/core/images/teaser-image-main/dhl-logo.jpg" />
+    <meta property="og:url" content="https://dhl-rastreos-mx-factura.on.drv.tw/" />
+    <meta property="og:type" content="website" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Rastreo - DHL - México</title>
+	<link href="css/bundle-utapi-logic.2a6099a722e389d86636efb34ffe5af0.css" rel="stylesheet" />
+	<link href="css/bundle-utapi-ui.2a6099a722e389d86636efb34ffe5af0.css" rel="stylesheet">
+	<link href="css/bundle.2a6099a722e389d86636efb34ffe5af0.css" rel="stylesheet" />
+	<link href="styles.css" rel="stylesheet" />
+	<link href="codigo.css" rel="stylesheet" />
+	<meta content="es-MX" name="language" />
+	<meta content='"americas"' name="region" />
+	<style>
+	/* Caja de rastreo */
+	
+  main {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 10px;
+	}
+	.main-wcag-main-content {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 10px;
+	}
+	
+	.tracking-box {
+		background-color: #fff;
+		border: 1px solid #ddd;
+		border-radius: 30px;
+		padding: 20px;
+		text-align: center;
+		width: 100%;
+		max-width: 500px;
+		/* Ajusta el tamaño máximo según sea necesario */
+	}
+	
+	.tracking-box h2 {
+		margin-bottom: 20px;
+		color: #333;
+	}
+	
+	.tracking-box input[type="text"] {
+		width: calc(100% - 20px);
+		padding: 10px;
+		border: 1px solid #ddd;
+		border-radius: 4px;
+		margin-bottom: 10px;
+	}
+	
+	.tracking-box button {
+		background-color: red;
+		/* Amarillo DHL */
+		color: #333;
+		border: none;
+		padding: 10px 20px;
+		border-radius: 4px;
+		cursor: pointer;
+		font-size: 16px;
+	}
+	
+	.tracking-box button:hover {
+		background-color: #e5b90f;
+		/* Amarillo más oscuro para hover */
+	}
+	</style>
+	</link>
+</head>
+
+<body>
+
+	<head>
+		<!--googleoff: all-->
+		<div class="c-navigation js--flyout-keyboardtrap" data-navigation-show-stick-after="0px" data-navigation-type="static">
+			<nav aria-label="Navegación Meta" class="c-navigation--bar c-navigation--bar--main" role="navigation">
+				<div class="c-navigation--bar--wrapper component-wide l-grid--between-s l-grid--middle-s">
+					<div class="c-navigation-logo-wrapper">
+						<a class="c-navigation-logo" href="data:image/jpeg;base64,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" target="_self" title="DHL Logo"> <img alt="DHL Logo" src="data:image/jpeg;base64,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" /> </a>
+					</div>
+					<ul class="c-navigation--menu c-navigation-menu--language-list-container">
+						<li data-on-search-hide="false">
+							<a class="c-navigation-menu--meta-link link link-external"> <span>Alertas</span></a>
+						</li>
+						<li data-on-search-hide="false">
+							<a class="c-navigation-menu--meta-link link link-external"> <span>Buscar una ubicación </span></a>
+						</li>
+						<li data-on-search-hide="false">
+							<a class="c-navigation-menu--meta-link link link-external"> <span>Buscar</span></a>
+						</li>
+						<li data-on-search-hide="false">
+							<a class="c-navigation-menu--meta-link link link-external"> <span>México</span></a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<!--googleon: all-->
+		
+		<div class="secondaryNavIparsys iparsys parsys">
+      <div class="section"></div>
+      <div class="iparys_inherited"></div>
+  </div>
+  <div class="js--nav-padding-layer c-nav--padding-layer"></div>
+  <main id="wcag-main-content">
+      <div class="parsysPath parsys">
+          <span class="link-anchor" id="parsysPath_utapi_trackandtrace_"></span>
+      </div>
+  </main>
+  <div class="c-tracking-headline component-wide">
+      <h1 style="font-size: 22px; font-weight: bold;">RASTREO Y SEGUIMIENTO</h1>
+  </div>
+  <div class="c-tracking--container l-grid">
+          <div class="c-tracking-input--form is-open">
+              <div class="c-voc-tracking-bar--input-outer-group"></div>
+          </div>
+      </div>
+  </div>
+  
+
+<body>
+	<header>
+    <div class="header-container"></div>
+  </header>
+  <main>
+      <div class="numero">
+          <input id="inputText" placeholder="Numero De Rastreo" type="text" />
+          <div style="background-color: #8B0000; text-align: center; padding: 10px; margin-top: 10px;">
+          <button class="button" type="submit" onclick="redireccionar()"><span style="color: white; font-size: 16px;">RASTREO</span></button>
+      </div>
+	</main>
+	<script>
+        // Hacemos que la función sea global al declararla fuera de DOMContentLoaded
+        function redireccionar() { 
+            const input = document.getElementById("inputText").value.trim(); // Eliminamos toLowerCase() si es solo numérico
+    
+            if (!input) {
+                alert("Por favor, ingrese un valor.");
+                return;
+            }
+    
+            // Validación para que el código sea solo numérico
+            if (isNaN(input)) {
+                alert("El código debe ser numérico.");
+                return;
+            }
+    
+            // Lógica de redirección según el número de rastreo
+            switch (input) {
+                case "15690425":
+                    window.location.href = "factura3/4/index.html";
+                    break;
+                case "15690525":
+                    window.location.href = "factura3/5/index.html";
+                    break;
+                case "15690625":
+                    window.location.href = "factura3/6/index.html";
+                    break;
+                case "15690725":
+                    window.location.href = "factura3/7/index.html";
+                    break;
+                case "15690825":
+                    window.location.href = "factura3/8/index.html";
+                    break;
+                case "15690925":
+                    window.location.href = "factura3/9/index.html";
+                    break;
+                case "15691025":
+                    window.location.href = "factura3/10/index.html";
+                    break;
+                case "15691125":
+                    window.location.href = "factura3/11/index.html";
+                    break;
+                    case "15691225":
+                    window.location.href = "factura3/12/index.html";
+                    break;
+                case "15691325":
+                    window.location.href = "factura3/13/index.html";
+                    break;
+                case "15691425":
+                    window.location.href = "factura3/14/index.html";
+                    break;
+                case "15691525":
+                    window.location.href = "factura3/15/index.html";
+                    break;
+                case "15691625":
+                    window.location.href = "factura3/16/index.html";
+                    break;
+                case "15691725":
+                    window.location.href = "factura3/17/index.html";
+                    break;
+            }
+        }
+    </script>
+</body>
+
+
+
+
+
+</form>
+<div class="c-tracking-result--loader js--tracking-result--loader l-grid--w-100pc-s l-grid--center-s">
+	<div class="c-tracking-result--skeleton-content">
+		<div class="c-tracking-result--skeleton-grey placeholder"> </div>
+	</div>
+</div>
+<div aria-atomic="true" aria-live="polite" class="js--tracking-result--a11y-container sr-only"></div>
+<div class="js--tracking-result--container c-tracking-result--container l-grid--w-100pc-s"></div>
+<div class="c-utapi-content-injection js--utapi-content-injection" data-baseurl="/mx-es/home/tracking/tracking-content-injection/_SERVICE_/_STATUSCODE_.html">
+	<div class="c-utapi-content-injection--content js--utapi-content-injection--content"></div>
+	<div class="c-utapi-content-injection--defaultcontent js--utapi-content-injection--defaultcontent">
+		<div class="experiencefragment" data-xf-path="/content/experience-fragments/dhl/es-mx-mexican/utapi-content/customer_service/accordion-with-title/xbu_master_accordion_generic_tracking_faq"> <span class="link-anchor" id="content-injection-par_experiencefragment"></span>
+			<div class="cmp-experiencefragment cmp-experiencefragment--accordion-with-title" id="experiencefragment-0feebeeea7">
+				<div class="xf-content-height">
+					<div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+						<div class="container container-margin-bottom aem-GridColumn aem-GridColumn--default--12"> <span class="link-anchor" id="root_container_copy"></span>
+							<div class="cmp-container cmp-container--white cmp-container--padding-position-top cmp-container--gutter-21 cmp-container--padding-size-14 cmp-container--left-on-top" id="container-b154c83bfe">
+								<div class="aem-Grid aem-Grid--12 aem-Grid--tablet--12 aem-Grid--default--12 aem-Grid--phone--12">
+									<div class="title title-left title-black title-margin-bottom aem-GridColumn--tablet--12 aem-GridColumn--offset--tablet--0 aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn--tablet--none aem-GridColumn--default--9 aem-GridColumn aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0"><span class="link-anchor" id="root_container_copy_title"></span>
+                    <br><br><br>
+										<div class="cmp-title" id="title-591f1380b3">
+											<h5>
+			
+		 
+			Preguntas Frecuentes
+		<h5> </div>
+									</div>
+									<div class="accordion header-large-font aem-GridColumn--tablet--12 aem-GridColumn--offset--tablet--0 aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn--tablet--none aem-GridColumn aem-GridColumn--default--12 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0"> <span class="link-anchor" id="root_container_copy_accordion"></span>
+										<div class="cmp-accordion" data-cmp-is="accordion" data-placeholder-text="false" id="accordion-dde3361279">
+											<div class="cmp-accordion__item" data-cmp-data-layer='{"accordion-dde3361279-item-acde292ead":{"@type":"dhl/components/core/accordion/item","repo:modifyDate":"2024-06-25T15:49:07Z","dc:title":"¿Qué Es un Número de Rastreo y Dónde Puedo Encontrarlo?"}}' data-cmp-hook-accordion="item" id="accordion-dde3361279-item-acde292ead" itemprop="mainEntity" itemscope="true" itemtype="https://schema.org/Question">
+												<h3 class="cmp-accordion__header">
+<button aria-controls="accordion-dde3361279-item-acde292ead-panel" class="cmp-accordion__button" data-cmp-hook-accordion="button" id="accordion-dde3361279-item-acde292ead-button" type="button">
+<span class="cmp-accordion__title">¿Qué Es un Número de Rastreo y Dónde Puedo Encontrarlo?</span>
+<span class="cmp-accordion__icon"></span>
+</button>
+</h3>
+												<div aria-labelledby="accordion-dde3361279-item-acde292ead-button" class="cmp-accordion__panel cmp-accordion__panel--hidden" data-cmp-hook-accordion="panel" id="accordion-dde3361279-item-acde292ead-panel" role="region">
+													<div class="text text-left text-default text-black text-margin-top"><span class="link-anchor" id="container_copy_accordion_text"></span>
+														<div class="cmp-text" id="text-a67b4c9398" itemprop="acceptedAnswer" itemscope="true" itemtype="https://schema.org/Answer">
+															<p class="cmp-text__inline-text cmp-text__inline-text--small-body-copy"><span class="cmp-text__inline-text cmp-text__inline-text--regular-desc-text"><span class="cmp-text__inline-text cmp-text__inline-text--regular-body-copy">Un número o una ID de rastreo corresponde a una combinación de números y, posiblemente, letras que permite identificar exclusivamente su embarque para el rastreo nacional e internacional. <br/><br/>
+    Generalmente, el remitente o la tienda en línea pueden proporcionar el número o ID de rastreo. Si ha pedido un producto mediante una tienda en línea, el correo electrónico de confirmación o la notificación de rastreo de envío normalmente tienen el número o ID de rastreo. Si no es así, comuníquese con el remitente o la tienda en línea.<br/></span></span>
+															</p>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="cmp-accordion__item" data-cmp-data-layer='{"accordion-dde3361279-item-dd4bb25142":{"@type":"dhl/components/core/accordion/item","repo:modifyDate":"2024-06-25T15:49:07Z","dc:title":"¿Cuándo estará disponible la información de rastreo de mi envío?"}}' data-cmp-hook-accordion="item" id="accordion-dde3361279-item-dd4bb25142" itemprop="mainEntity" itemscope="true" itemtype="https://schema.org/Question">
+												<h3 class="cmp-accordion__header">
+<button aria-controls="accordion-dde3361279-item-dd4bb25142-panel" class="cmp-accordion__button" data-cmp-hook-accordion="button" id="accordion-dde3361279-item-dd4bb25142-button" type="button">
+<span class="cmp-accordion__title">¿Cuándo estará disponible la información de rastreo de mi envío?</span>
+<span class="cmp-accordion__icon"></span>
+</button>
+</h3>
+												<div aria-labelledby="accordion-dde3361279-item-dd4bb25142-button" class="cmp-accordion__panel cmp-accordion__panel--hidden" data-cmp-hook-accordion="panel" id="accordion-dde3361279-item-dd4bb25142-panel" role="region">
+													<div class="text text-left text-default text-black text-margin-top"><span class="link-anchor" id="container_copy_accordion_item_1679325468171"></span>
+														<div class="cmp-text" id="text-e396f35da8" itemprop="acceptedAnswer" itemscope="true" itemtype="https://schema.org/Answer">
+															<p class="cmp-text__inline-text cmp-text__inline-text--small-body-copy"><span class="cmp-text__inline-text cmp-text__inline-text--regular-desc-text"><span class="cmp-text__inline-text cmp-text__inline-text--regular-body-copy">Generalmente, las actualizaciones de Rastreo aparecen entre 24 y 48 horas después de recibir el ID de Rastreo y Seguimiento. Los eventos de seguimiento suelen aparecer tan pronto como el embarque llega a nuestras instalaciones.</span></span>
+															</p>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="cmp-accordion__item" data-cmp-data-layer='{"accordion-dde3361279-item-8e6da08843":{"@type":"dhl/components/core/accordion/item","repo:modifyDate":"2024-06-25T15:49:07Z","dc:title":"¿Por qué no funciona mi número o ID de rastreo?"}}' data-cmp-hook-accordion="item" id="accordion-dde3361279-item-8e6da08843" itemprop="mainEntity" itemscope="true" itemtype="https://schema.org/Question">
+												<h3 class="cmp-accordion__header">
+<button aria-controls="accordion-dde3361279-item-8e6da08843-panel" class="cmp-accordion__button" data-cmp-hook-accordion="button" id="accordion-dde3361279-item-8e6da08843-button" type="button">
+<span class="cmp-accordion__title">¿Por qué no funciona mi número o ID de rastreo?</span>
+<span class="cmp-accordion__icon"></span>
+</button>
+</h3>
+												<div aria-labelledby="accordion-dde3361279-item-8e6da08843-button" class="cmp-accordion__panel cmp-accordion__panel--hidden" data-cmp-hook-accordion="panel" id="accordion-dde3361279-item-8e6da08843-panel" role="region">
+													<div class="text text-left text-default text-black text-margin-top"><span class="link-anchor" id="container_copy_accordion_item_1679325475405"></span>
+														<div class="cmp-text" id="text-4134911e7a" itemprop="acceptedAnswer" itemscope="true" itemtype="https://schema.org/Answer">
+															<p class="cmp-text__inline-text cmp-text__inline-text--small-body-copy">Por favor, asegúrese de haber introducido el número de rastreo correcto y en el formato adecuado: Compruebe la longitud mínima de 5 caracteres y si hay caracteres especiales en sus datos introducidos.  El guión, la coma, el espacio y el punto y coma se entienden como separadores entre varios ID de seguimiento.</p>
+															<p class="cmp-text__inline-text cmp-text__inline-text--small-body-copy">Si su ID de rastreo no funciona, por favor, póngase en contacto con el remitente o la tienda en línea.</p>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="cmp-accordion__item" data-cmp-data-layer='{"accordion-dde3361279-item-ab60afbf0a":{"@type":"dhl/components/core/accordion/item","repo:modifyDate":"2024-06-25T15:49:07Z","dc:title":"¿Puedo rastrear mi embarque si no tengo un número de rastreo?"}}' data-cmp-hook-accordion="item" id="accordion-dde3361279-item-ab60afbf0a" itemprop="mainEntity" itemscope="true" itemtype="https://schema.org/Question">
+												<h3 class="cmp-accordion__header">
+<p aria-controls="accordion-dde3361279-item-ab60afbf0a-panel" class="cmp-accordion__button" data-cmp-hook-accordion="button" id="accordion-dde3361279-item-ab60afbf0a-button" type="button">
+<span class="cmp-accordion__title">¿Puedo rastrear mi embarque si no tengo un número de rastreo?</span>
+<span class="cmp-accordion__icon"></span>
+</p>
+</h3> </div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> <span class="link-anchor" id="parsysPath_reference_1780513143"></span>
+<div class="cq-dd-paragraph"> <span class="link-anchor" id="parsysPath_code_inclusion"></span>
+	<div class="c-code-inclusion component-margin component-small">
+		<div class="c-code-inclusion--container"> </div>
+	</div>
+</div> <span class="link-anchor" id="parsysPath_horizontal_ruler"></span>
+<div class="c-horizontal-ruler component-margin l-grid l-grid--center-s invisible">
+	<hr class="c-horizontal-ruler--wide" /> </div>
+<a aria-label="ve arriba" class="base-button c-go-to-top-button js--go-to-top-button has-icon icon-chevron-up" data-tracking='{"component":"go-to-top-button"}' title="ve arriba"></a>
+<footer class="c-voc-footer" id="wcag-footer">
+	<div class="xf-content-height">
+		<div class="aem-Grid aem-Grid--12 aem-Grid--default--12"> 
+			<!--googleoff: all--><span class="link-anchor" id="footerContainerPar_footer_link_containe"></span>
+			<div class="c-voc-footer--sitemap l-grid component-wide">
+				<h2 class="sr-only">Pie de página</h2> <span class="link-anchor" id="footer-link-container-par_footer_link_section_"></span>
+				<ul class="c-voc-footer--sitemap-section l-grid--w-100pc-s l-grid--w-50pc-s-m l-grid--w-50pc-s-l l-grid--w-50pc-m-s l-grid--w-20pc-m-m">
+					<li class="group-heading red">
+						<h3 class="c-voc-footer--sitemap-section-group-heading-title level5">
+        Enlaces rápidos
+        
+        
+        </h3> </li>
+					<li> <a class="link link-light-grey has-icon" data-tracking='{"component":"dhl/components/elements/footer-link-element","name":"Customer Service","topic":"footer"}'>
+	   Servicio al Cliente
+    </a> </li>
+					<li> <a class="link link-light-grey has-icon" data-tracking='{"component":"dhl/components/elements/footer-link-element","name":"Customer Portal Logins","topic":"footer"}'>
+	   Portal de Inicios de Sesión del Cliente
+    </a> </li>
+					<li> <a aria-describedby="a11y-message--new-window " class="link link-light-grey has-icon" data-tracking='{"component":"dhl/components/elements/footer-link-element","name":"Digital Partners and Integrations","topic":"footer"}' rel="noopener noreferrer" target="_blank">
+	   Socios digitales e integraciones
+    </a> </li>
+					<li> <a aria-describedby="a11y-message--new-window a11y-message--external-link" class="link link-light-grey link-external has-icon" data-tracking='{"component":"dhl/components/elements/footer-link-element","name":"Developer Portal","topic":"footer"}' rel="noopener noreferrer" target="_blank">
+	   Portal del Desarrollador
+    </a> </li>
+					<li> <a class="link link-light-grey has-icon" data-tracking='{"component":"dhl/components/elements/footer-link-element","name":"Get a Quote","topic":"footer"}'>
+	   Obtenga una cotización
+    </a> </li>
+					<li>
+						<a class="link link-light-grey has-icon" dhl="" empresas="" para=""> </a>
+					</li>
+				</ul> <span class="link-anchor" id="footer-link-container-par_footer_link_section__1682332701"></span>
+				<ul class="c-voc-footer--sitemap-section l-grid--w-100pc-s l-grid--w-50pc-s-m l-grid--w-50pc-s-l l-grid--w-50pc-m-s l-grid--w-20pc-m-m">
+					<li class="group-heading">
+						<h3 class="c-voc-footer--sitemap-section-group-heading-title level5">
+        Nuestras Divisiones
+        
+        
+        </h3> </li>
+					<li> <a class="link link-light-grey has-icon" data-tracking='{"component":"dhl/components/elements/footer-link-element","name":"DHL Express","topic":"footer"}'>
+	   DHL Express
+    </a> </li>
+					<li> <a class="link link-light-grey has-icon" data-tracking='{"component":"dhl/components/elements/footer-link-element","name":"DHL Global Forwarding","topic":"footer"}'>
+	   DHL Global Forwarding
+    </a> </li>
+					<li> <a class="link link-light-grey has-icon" data-tracking='{"component":"dhl/components/elements/footer-link-element","name":"DHL Supply Chain","topic":"footer"}'>
+	   DHL Supply Chain
+    </a> </li>
+					<li> <a class="link link-light-grey has-icon" data-tracking='{"component":"dhl/components/elements/footer-link-element","name":"Other Global Divisions","topic":"footer"}'>
+	   Otras Divisiones Globales
+    </a> </li>
+				</ul> <span class="link-anchor" id="footer-link-container-par_footer_link_section__649098010"></span>
+				<ul class="c-voc-footer--sitemap-section l-grid--w-100pc-s l-grid--w-50pc-s-m l-grid--w-50pc-s-l l-grid--w-50pc-m-s l-grid--w-20pc-m-m">
+					<li class="group-heading">
+						<h3 class="c-voc-footer--sitemap-section-group-heading-title level5">
+        Sectores de la Industria
+        
+        
+        </h3> </li>
+					<li> <a class="link link-light-grey has-icon" data-tracking='{"component":"dhl/components/elements/footer-link-element","name":"Auto-Mobility","topic":"footer"}'>
+	   Movilidad Autónoma
+    </a> </li>
+					<li> <a class="link link-light-grey has-icon" data-tracking='{"component":"dhl/components/elements/footer-link-element","name":"Energy","topic":"footer"}'>
+	   Energía
+    </a> </li>
+					<li> <a class="link link-light-grey has-icon" data-tracking='{"component":"dhl/components/elements/footer-link-element","name":"Engineering and Manufacturing","topic":"footer"}'>
+	   Ingeniería y Fabricación
+    </a> </li>
+					<li> <a class="link link-light-grey has-icon" data-tracking='{"component":"dhl/components/elements/footer-link-element","name":"Life Sciences and Healthcare","topic":"footer"}'>
+	   Ciencias Biológicas y Sector de la Salud
+    </a> </li>
+					<li> <a class="link link-light-grey has-icon" data-tracking='{"component":"dhl/components/elements/footer-link-element","name":"Retail","topic":"footer"}'>
+	   Retail en Línea y Moda
+    </a> </li>
+					<li> <a class="link link-light-grey has-icon" data-tracking='{"component":"dhl/components/elements/footer-link-element","name":"Technology","topic":"footer"}'>
+	   Tecnología
+    </a> </li>
+				</ul> <span class="link-anchor" id="footer-link-container-par_footer_link_section__1307971798"></span>
+				<ul class="c-voc-footer--sitemap-section l-grid--w-100pc-s l-grid--w-50pc-s-m l-grid--w-50pc-s-l l-grid--w-50pc-m-s l-grid--w-20pc-m-m">
+					<li class="group-heading">
+						<h3 class="c-voc-footer--sitemap-section-group-heading-title level5">
+        Información de la Empresa
+        
+        
+        </h3> </li>
+					<li> <a class="link link-light-grey has-icon" data-tracking='{"component":"dhl/components/elements/footer-link-element","name":"About DHL","topic":"footer"}'>
+	   Acerca de DHL
+    </a> </li>
+					<li> <a aria-describedby="a11y-message--new-window a11y-message--external-link" class="link link-light-grey link-external has-icon" data-tracking='{"component":"dhl/components/elements/footer-link-element","name":"Delivered","topic":"footer"}' rel="noopener noreferrer" target="_blank">
+	   Entregado
+    </a> </li>
+					<li> <a class="link link-light-grey has-icon" data-tracking='{"component":"dhl/components/elements/footer-link-element","name":"Careers","topic":"footer"}'>
+	   Carreras
+    </a> </li>
+					<li> <a class="link link-light-grey has-icon" data-tracking='{"component":"dhl/components/elements/footer-link-element","name":"Press Center","topic":"footer"}'>
+	   Centro de Prensa
+    </a> </li>
+					<li> <a aria-describedby="a11y-message--new-window a11y-message--external-link" class="link link-light-grey link-external has-icon" data-tracking='{"component":"dhl/components/elements/footer-link-element","name":"Investors","topic":"footer"}' rel="noopener noreferrer" target="_blank">
+	   Inversores
+    </a> </li>
+					<li> <a class="link link-light-grey has-icon" data-tracking='{"component":"dhl/components/elements/footer-link-element","name":"Sustainability","topic":"footer"}'>
+	   Sustentabilidad
+    </a> </li>
+					<li> <a class="link link-light-grey has-icon" data-tracking='{"component":"dhl/components/elements/footer-link-element","name":"Insights and Innovation","topic":"footer"}'>
+	   Innovación
+    </a> </li>
+					<li> <a class="link link-light-grey has-icon" data-tracking='{"component":"dhl/components/elements/footer-link-element","name":"Official Logistics Partners","topic":"footer"}'>
+	   Asociaciones de marca
+    </a> </li>
+				</ul>
+			</div>
+			<div class="c-voc-footer--branding">
+				<div class="c-voc-footer--branding-links-container component-wide">
+					<div class="c-voc-footer--branding-links">
+						<div class="c-voc-footer--branding-links-header"> <img alt="DHL GROUP" class="c-voc-footer--branding-links-header-logo" src="./cloned_page/images/glo-footer-logo.svg" /> </div>
+						<ul class="c-voc-footer--branding-link-list">
+							<li> <a class="link link-external has-icon" data-tracking='{"component":"dhl/components/general/footer-branding","name":"Fraud Awareness","topic":"footer legal"}'>
+                       Conciencia sobre fraudes
+                    </a> </li>
+							<li> <a class="link has-icon" data-tracking='{"component":"dhl/components/general/footer-branding","name":"Legal Notice","topic":"footer legal"}'>
+                       Aviso Legal
+                    </a> </li>
+							<li> <a class="link has-icon" data-tracking='{"component":"dhl/components/general/footer-branding","name":"Terms of Use","topic":"footer legal"}'>
+                       Condiciones de Uso
+                    </a> </li>
+							<li> <a class="link has-icon" data-tracking='{"component":"dhl/components/general/footer-branding","name":"Privacy Notice","topic":"footer legal"}'>
+                       Aviso de Privacidad
+                    </a> </li>
+							<li> <a class="link has-icon" data-tracking='{"component":"dhl/components/general/footer-branding","name":"Dispute Resolution","topic":"footer legal"}'>
+                       Resolución de Disputas
+                    </a> </li>
+							<li> <a class="link has-icon" data-tracking='{"component":"dhl/components/general/footer-branding","name":"Additional Information","topic":"footer legal"}'>
+                       Información adicional
+                    </a> </li>
+							<li> <a class="link has-icon" data-tracking='{"component":"dhl/components/general/footer-branding","name":"Cookie Settings","topic":"footer legal"}'>
+                       Ajustes de cookies
+                    </a> </li>
+						</ul>
+					</div>
+					<div class="c-voc-footer--branding-copyright component-wide">
+						<div>2024 © - todos los derechos reservados</div>
+					</div>
+				</div>
+				<!--googleon: all-->
+			</div>
+		</div>
+	</div>
+</footer>
+
+</html>
